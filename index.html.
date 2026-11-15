@@ -1,32 +1,101 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>PROOFLY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROOFLY</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #100c2c, #30205c, #7251a0);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #e8caff;
+}
+
+main {
+    padding: 65px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #e8caff;
+    font-size: 23px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+button {
+    background: #d9b5ff;
+    color: #24143f;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.12);
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 35px auto;
+}
+
+footer {
+    padding: 25px;
+    color: #d8c7ed;
+    font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Welcome to PROOFLY!</h1>
+<header>PROOFLY</header>
+
+<main>
+    <h1>Welcome to PROOFLY</h1>
 
     <h2>Trust begins with proof.</h2>
 
-    <p>
+    <div class="card">
+        <p>
         Welcome to my first website.
-        I am learning HTML to build something meaningful.
-    </p>
+        I am learning software development
+        and building something meaningful.
+        </p>
+    </div>
 
-    <h3>Our Mission</h3>
+    <button>Explore PROOFLY</button>
+</main>
 
-    <p>
-        PROOFLY aims to make trust stronger through proof.
-    </p>
-
-    <button>Get Started</button>
-
-    <footer>
-        <p>© 2026 PROOFLY. All rights reserved.</p>
-    </footer>
+<footer>
+    © 2026 PROOFLY | Built with ambition.
+</footer>
 
 </body>
 </html>
