@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PROOFLY Records</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #eef4ff;
+      padding: 25px;
+    }
+    h1 { color: #174ea6; }
+    input, button {
+      display: block;
+      padding: 12px;
+      margin: 12px 0;
+      width: 90%;
+    }
+    button {
+      background: #174ea6;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PROOFLY</h1>
+  <h2>Save Service Record</h2>
+
+  <input id="clientName"
+    placeholder="Client name">
+
+  <input id="service"
+    placeholder="Service required">
+
+  <button id="saveBtn">Save Record</button>
+
+  <h2>Saved Records</h2>
+  <ul id="records"></ul>
+
+  <script>
+    const STORAGE_KEY = "prooflyRecords";
+
+    function displayRecords() {
+      const records = JSON.parse(
+        localStorage.getItem(STORAGE_KEY) || "[]"
+      );
+
+      const list = document.getElementById("records");
+      list.innerHTML = "";
+
+      records.forEach(function(record) {
+        const item = document.createElement("li");
+        item.textContent =
+          record.name + " - " + record.service;
+        list.appendChild(item);
+      });
+    }
+
+    document.getElementById("saveBtn")
+      .addEventListener("click", function() {
+
+        const name = document.getElementById("clientName")
+          .value.trim();
+
+        const service = document.getElementById("service")
+          .value.trim();
+
+        if (!name || !service) {
+          alert("Please enter both details");
+          return;
+        }
+
+        const records = JSON.parse(
+          localStorage.getItem(STORAGE_KEY) || "[]"
+        );
+
+        records.push({
+          name: name,
+          service: service
+        });
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(records)
+        );
+
+        document.getElementById("clientName").value = "";
+        document.getElementById("service").value = "";
+
+        displayRecords();
+      });
+
+    displayRecords();
+  </script>
+
+</body>
+</html>
